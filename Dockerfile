@@ -18,8 +18,13 @@ RUN ln -sfn "$BITCOIN_DATA" /home/bitcoin/.bitcoin
 #COPY bitcoin.conf /home/bitcoin/bitcoin.conf
 RUN chown -h bitcoin:bitcoin /home/bitcoin/.bitcoin
 
-# Install Bitcoin Cash ABC
-RUN add-apt-repository ppa:bitcoin-abc/ppa
+# Extra tools
+RUN add-apt-repository ppa:ubuntu-toolchain-r/test
+RUN apt-get update
+RUN apt-get install -y g++-7
+
+# Install BCHN
+RUN add-apt-repository ppa:bitcoin-cash-node/ppa
 RUN apt-get update
 RUN apt-get install -y bitcoind
 
@@ -38,4 +43,3 @@ EXPOSE 8332 8333 28332
 WORKDIR /home/bitcoin
 COPY startup-script.sh startup-script.sh
 CMD ["./startup-script.sh"]
-
