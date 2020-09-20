@@ -1,8 +1,8 @@
-# docker-abc
-A BCH full node based on the ABC reference implementation.
+# docker-bchn
+A BCH full node based on the BCHN reference implementation.
 
-This repository specifically targets the hard drive and micro-server platform
-described at [bchjs.cash](https://bchjs.cash).
+This repository specifically targets the 'Cash Stack'
+described at [FullStack.cash](https://fullstack.cash).
 
 # Installation and Usage
 - It's assumed that you are starting with a fresh installation of Ubuntu 18.04
