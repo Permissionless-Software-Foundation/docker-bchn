@@ -1,6 +1,15 @@
 FROM ubuntu:18.04
 MAINTAINER Chris Troutner <chris.troutner@gmail.com>
 
+#Update the OS and install any OS packages needed.
+RUN apt-get update
+RUN apt-get install -y sudo git curl nano gnupg wget
+
+#Install Node and NPM
+RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh
+RUN apt-get install -y nodejs build-essential
+
 # Create bitcoin user and group.
 RUN groupadd -r bitcoin && useradd -r -m -g bitcoin bitcoin
 
@@ -36,10 +45,11 @@ VOLUME /data
 VOLUME /home/bitcoin/config
 EXPOSE 8332 8333 28332
 
-#CMD ["bitcoind", "-conf=/home/bitcoin/bitcoin.conf", "-datadir=/data", "-disablewallet"]
-#CMD ["bitcoind", "-conf=/data/bitcoin.conf", "-datadir=/data", "-disablewallet"]
-
 # Startup script that will copy in config settings at startup.
 WORKDIR /home/bitcoin
+
+#COPY dummyapp.js dummyapp.js
+#CMD ["node", "dummyapp.js"]
+
 COPY startup-script.sh startup-script.sh
 CMD ["./startup-script.sh"]
