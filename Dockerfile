@@ -1,11 +1,12 @@
 FROM ubuntu:18.04
 MAINTAINER Chris Troutner <chris.troutner@gmail.com>
 
-#Update the OS and install any OS packages needed.
+# Update the OS and install any OS packages needed.
 RUN apt-get update
 RUN apt-get install -y sudo git curl nano gnupg wget
 
-#Install Node and NPM
+# Install Node and NPM
+# (used for debugging)
 RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install -y nodejs build-essential
