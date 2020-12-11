@@ -1,0 +1,17 @@
+bitcoind:
+  build: .
+  dockerfile: Dockerfile
+  #image: christroutner/bitcoind-bch-abc-0.21.9
+  container_name: bchn-testnet3
+  ports:
+    - "18332:18332"   # RPC mainnet port
+    - "18333:18333"   # p2p mainnet port
+    - "38333:38333" # ZMQ port
+  volumes:
+    - /mnt/data/blockchain-data/testnet3/bchn/blockchain-data:/data
+    - ../../config-testnet:/home/bitcoin/config
+  restart: always
+  #stop_signal: SIGINT
+  #stop_signal: SIGTERM #default
+  #stop_signal: SIGKILL
+  #stop_signal: SIGHUP
