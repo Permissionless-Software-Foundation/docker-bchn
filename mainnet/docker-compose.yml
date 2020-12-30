@@ -1,0 +1,17 @@
+bitcoind:
+  build: .
+  dockerfile: Dockerfile
+  #image: christroutner/bitcoind-bch-abc-0.21.9
+  container_name: bchn-main
+  ports:
+    - "8332:8332"   # RPC mainnet port
+    - "8333:8333"   # p2p mainnet port
+    - "28332:28332" # ZMQ port
+  volumes:
+    - /mnt/data/blockchain-data/bchn-mainnet/bchn-blockchain-data:/data
+    - ../config:/home/bitcoin/config
+  restart: always
+  #stop_signal: SIGINT
+  #stop_signal: SIGTERM #default
+  #stop_signal: SIGKILL
+  #stop_signal: SIGHUP
