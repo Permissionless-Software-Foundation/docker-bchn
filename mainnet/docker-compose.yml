@@ -8,8 +8,8 @@ bitcoind:
     - "8333:8333"   # p2p mainnet port
     - "28332:28332" # ZMQ port
   volumes:
-    - /mnt/data/blockchain-data/bchn-mainnet/bchn-blockchain-data:/data
-    - ../config:/home/bitcoin/config
+    - ../../blockchain-data:/data
+    - ../../config:/home/bitcoin/config
   restart: always
   #stop_signal: SIGINT
   #stop_signal: SIGTERM #default
