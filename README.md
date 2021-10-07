@@ -19,9 +19,9 @@ shows how to do so on a Ubuntu system.
 
 - Clone this repository in your home directory with the following command:
 
-`git clone https://github.com/christroutner/docker-abc`
+`git clone https://github.com/christroutner/docker-bchn`
 
-- Create a two directories in the same directory `docker-abc`. These will be
+- Create a two directories in the same directory `docker-bchn`. These will be
 used to store configuration data and blockchain data. Call them:
   - `config`
   - `blockchain-data`
@@ -30,7 +30,7 @@ used to store configuration data and blockchain data. Call them:
 into the `config` directory you just created. Customize the bitcoin.conf file for
 your own full node.
 
-- Enter the `docker-abc` directory and start the container with this command:
+- Enter the `docker-bchn` directory and start the container with this command:
 
 `docker-compose up -d`
 
