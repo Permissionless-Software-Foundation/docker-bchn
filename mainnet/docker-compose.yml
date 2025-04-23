@@ -1,9 +1,9 @@
 version: '3.7'
 
-services:  
+services:
   bitcoind:
     build: .
-    dockerfile: Dockerfile
+    #dockerfile: Dockerfile
     #image: christroutner/bitcoind-bch-abc-0.21.9
     container_name: bchn-main
     ports:
