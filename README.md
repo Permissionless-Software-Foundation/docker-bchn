@@ -1,18 +1,16 @@
 # docker-bchn
 A BCH full node based on the BCHN reference implementation.
 
-This repository specifically targets the 'Cash Stack'
-described at [FullStack.cash](https://fullstack.cash).
+This repository is a core piece of infrastructure used by the [Cash Stack](https://cashstack.info), is used to provide API service at [FullStack.cash](https://fullstack.cash), and is used in the construction of a [Cash Box](https://woodcashbox.com).
 
-# Installation and Usage
-- It's assumed that you are starting with a fresh installation of Ubuntu 18.04
+## Installation and Usage
+
+- It's assumed that you are starting with a fresh installation of Ubuntu
 LTS on a 64-bit machine. It's also assumed that you are installing as
 a [non-root user with sudo privileges](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04).
 
 - Install Docker on the host
-system. [This tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04) shows
-how to install Docker on a Ubuntu system. It's specifically targeted to Digital
-Ocean's cloud servers, but should work for any Ubuntnu system.
+system.
 
 - Install Docker Compose too. [This tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04)
 shows how to do so on a Ubuntu system.
