@@ -1,5 +1,4 @@
-FROM ubuntu:18.04
-MAINTAINER Chris Troutner <chris.troutner@gmail.com>
+FROM ubuntu:24.04
 
 # Update the OS and install any OS packages needed.
 RUN apt-get update
@@ -16,7 +15,6 @@ RUN groupadd -r bitcoin && useradd -r -m -g bitcoin bitcoin
 
 # Install basic software packages.
 RUN set -ex \
-	&& apt-get update \
 	&& apt-get install -qq --no-install-recommends -y curl wget gpg sudo \
 	software-properties-common gpg-agent
 
@@ -31,7 +29,7 @@ RUN chown -h bitcoin:bitcoin /home/bitcoin/.bitcoin
 # Extra tools
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt-get update
-RUN apt-get install -y g++-7
+RUN apt-get install -y g++
 
 # Install BCHN
 RUN add-apt-repository ppa:bitcoin-cash-node/ppa
